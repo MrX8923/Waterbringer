@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+{% block content %}
+    <section class="m-auto mt-5 col-5 text-center">
+        <div>
+            <h2>Водички?</h2>
+        </div>
+        <div>
+            <a class="nav-link p-3 m-3 menu" href="{% url 'order' %}">Заказ</a>
+        </div>
+    </section>
+
+{% endblock content %}

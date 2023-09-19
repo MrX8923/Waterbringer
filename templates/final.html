@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+{% block menu %}
+    <a class="nav-link menu m-3 p-3 col-1 text-center" href="{% url 'home' %}">Main</a>
+{% endblock menu %}
+{% block content %}
+    <section class="m-auto col-4">
+        <div class="thanks-cont p-5">
+            <h2>Уважаемый <span class="important">{{ name }} {{ lastname }}</span>!</h2>
+            <p>Спасибо, за то, что выбрали нас в качестве поставщика воды.</p>
+            <p>В ближайшее время наш сотрудник свяжется с вами по телефону:
+                <span class="important">{{ phone }}</span>.</p>
+            <p>На указанную почту <span class="important">{{ email }}</span> мы выслали подарочный сертификат.</p>
+            <p>Мы очень рады, что будем поставлять вам воду по <span class="important">{{ amount }}</span> в течение
+                <span class="important">{{ months }}</span></p>
+        </div>
+    </section>
+{% endblock content %}

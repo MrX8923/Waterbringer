@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+{% block menu %}
+    <a class="nav-link menu m-3 p-3 col-1 text-center" href="{% url 'home' %}">Main</a>
+{% endblock menu %}
+{% block content %}
+    <section class="m-auto col-4">
+        <div class="form-block">
+            <form method="POST" enctype="multipart/form-data" novalidate>
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="m-1 {% if field.errors %} errors {% endif %}">{{ field.label_tag }}</div>
+                    <div class="m-1 {% if field.errors %} errors {% endif %}">{{ field.errors }}</div>
+                    <div class="m-1 {% if field.errors %} errors {% endif %}">{{ field }}</div>
+                {% endfor %}
+            <br>
+                <button class="menu sub-button p-3 text-center" type="submit" value="Send">SEND</button>
+            </form>
+        </div>
+    </section>
+{% endblock content %}
